@@ -29,7 +29,8 @@ public class Conta {
 	private int id;
 	
 	@Column(name = "Tipo_Conta_Id")
-	private int tipoConta;
+	@Enumerated(EnumType.ORDINAL)
+	private TipoConta tipoConta;
 	
 	@Column(name = "Conta_Numero")
 	private String numero;
@@ -58,11 +59,11 @@ public class Conta {
 		this.id = id;
 	}
 
-	public int getTipoConta() {
+	public TipoConta getTipoConta() {
 		return tipoConta;
 	}
 
-	public void setTipoConta(int tipo) {
+	public void setTipoConta(TipoConta tipo) {
 		this.tipoConta = tipo;
 	}
 

@@ -20,13 +20,13 @@ public class TestaCadastro {
 		
 		
 		
-		conta.setNome("Fabio");
+		conta.setNome("Lucas");
 		conta.setAgencia("09876");
 		conta.setBanco("Bradesco");
 		conta.setDataCadastro(c);
 		conta.setNumero("123");
 		conta.setStatus(1);
-		conta.setTipoConta(tipo.getConta());
+		conta.setTipoConta(TipoConta.POUPANCA);
 		
 		cad.cadastra(conta);
 		
