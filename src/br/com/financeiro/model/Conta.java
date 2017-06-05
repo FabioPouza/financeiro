@@ -9,14 +9,11 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.hibernate.annotations.Type;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @Entity
@@ -36,7 +33,7 @@ public class Conta {
 	private String numero;
 	
 	@Column(name = "Conta_Status")
-	private int status;
+	private boolean status;
 	
 	@Column(name = "Conta_Nome")
 	private String nome;
@@ -59,58 +56,72 @@ public class Conta {
 		this.id = id;
 	}
 
+	@JsonProperty("tipo")
 	public TipoConta getTipoConta() {
 		return tipoConta;
 	}
 
+	@JsonProperty("tipo")
 	public void setTipoConta(TipoConta tipo) {
 		this.tipoConta = tipo;
 	}
 
+	@JsonProperty("nome")
 	public String getNome() {
 		return nome;
 	}
 
+	@JsonProperty("nome")
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
+	@JsonProperty("banco")
 	public String getBanco() {
 		return banco;
 	}
 
+	@JsonProperty("banco")
 	public void setBanco(String banco) {
 		this.banco = banco;
 	}
 
+	@JsonProperty("agencia")
 	public String getAgencia() {
 		return agencia;
 	}
 
+	@JsonProperty("agencia")
 	public void setAgencia(String agencia) {
 		this.agencia = agencia;
 	}
 
+	@JsonProperty("numero")
 	public String getNumero() {
 		return numero;
 	}
 
+	@JsonProperty("numero")
 	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 
-	public int isStatus() {
+	@JsonProperty("status")
+	public boolean isStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	@JsonProperty("status")
+	public void setStatus(boolean status) {
 		this.status = status;
 	}
 
+	@JsonProperty("data")
 	public Calendar getDataCadastro() {
 		return dataCadastro;
 	}
 
+	@JsonProperty("data")
 	public void setDataCadastro(Calendar dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}

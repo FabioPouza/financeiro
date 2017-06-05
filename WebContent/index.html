@@ -2,14 +2,15 @@
 
 <head>
   <title>Cadastrar</title>
+  <meta charset="UTF-8">
   <link href="css/materialize.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/fonte.css" rel="stylesheet">
+  <link href="css/cadastro.css" rel="stylesheet">
 </head>
 
 <body>
   <nav>
-    <div class="nav-wrapper teal lighten-1">
+    <div class="nav-wrapper color">
       <a href="#" class="brand-logo">Financeiro</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -26,47 +27,47 @@
   <div class="row alinhamento">
     <form class="col s12" id="cadastro">
       <div class="row">
-        <div class="input-field col s4 offset-s4">
-          <input placeholder="Digite seu nome..." id="txtNome" type="text" class="validate" name="nome" pattern="^[a-zA-Z\s]+$" />
+        <div class="input-field col s4 offset-s1">
+          <input placeholder="Digite seu nome..." id="txtNome" type="text" class="validate" name="nome"/>
           <label for="txtNome" data-error="Nome Invalido">Nome</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s4 offset-s4">
+        <div class="input-field col s4 offset-s1">
           <input id="txtBanco" type="text" class="validate" name="banco">
           <label for="txtBanco" data-error="Banco Invalido">Banco</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s4 offset-s4">
+        <div class="input-field col s4 offset-s1">
           <input id="txtAgencia" type="text" class="validate txt" name="agencia">
           <label for="txtAgencia">Agencia</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s4 offset-s4">
+        <div class="input-field col s4 offset-s1">
           <input id="txtNumero" type="text" class="validate txt" name="numero">
           <label for="txtNumero">Numero</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s4 offset-s4">
+        <div class="input-field col s4 offset-s1">
           <input type="date" class="datepicker" id="txtData">
           <label for="txtData">Data inicial</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s4 offset-s4">
-          <select class="icons">
+        <div class="input-field col s4 offset-s1">
+          <select class="icons" id="txtTipo">
             <option value="" disabled selected>Escolha o tipo</option>
-            <option value="" data-icon="images/corrente.png" class="circle">Corrente</option>
+            <option value="" data-icon="images/corrente.png" class="circle">CORRENTE</option>
             <option value="" data-icon="images/poupanca.png" class="circle">Poupança</option>
           </select>
           <label>Tipo de conta</label>
         </div>
       </div>
       <div class="row">
-        <div class="col s4 offset-s4">
+        <div class="col s4 offset-s1">
           <p>
             <input type="checkbox" id="chkStatus" />
             <label for="chkStatus">Status da conta</label>
@@ -74,10 +75,10 @@
         </div>
       </div>
       <div id="btn">
-        <button class="btn waves-effect waves-light" id="btnEnviar" type="button">Salvar
+        <button class="btn waves-effect waves-light color" id="btnEnviar" type="button">Salvar
           <i class="material-icons right">send</i>
         </button>
-        <button class="btn waves-effect waves-light" id="btnApagar" type="reset">Apagar
+        <button class="btn waves-effect waves-light color" id="btnApagar" type="reset">Apagar
           <i class="material-icons right">close</i>
         </button>
       </div>

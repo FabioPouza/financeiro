@@ -3,39 +3,47 @@ $(document).ready(function () {
 
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15 // Creates a dropdown of 15 years to control year
+    selectYears: 15, // Creates a dropdown of 15 years to control year
+    format: 'yyyy-mm-dd'
+    
   });
 
   $(document).ready(function () {
     $('select').material_select();
   });
 
-  function Cliente(nome, email, cep) {
+  function Conta(nome, banco, agencia, numero, data, tipo, status) {
     this.nome = nome;
-    this.email = email;
-    this.cep = cep;
+    this.banco = banco;
+    this.agencia = agencia;
+    this.numero = numero;
+    this.data = data;
+    this.tipo = tipo;
+    this.status = status
 
     this.getJson = function () {
-      var cliente = this;
-      return JSON.stringify(cliente);
+      var conta = this;
+      return JSON.stringify(conta);
     }
   };
 
-
-
-  $('#txtCep').mask('00000-000');
-
   $('#btnEnviar').click(function (e) {
     var nome = $('#txtNome').val();
-    var email = $('#txtEmail').val();
-    var cep = $('#txtCep').cleanVal();
-    var erros = [nomeValidator.isValid(nome), emailValidator.isValid(email), cepValidator.isValid(cep)];
-    if (erros[0].length == 0 && erros[1] == 0 && erros[2] == 0) {
-      var cliente = new Cliente(nome, email, cep);
-      var mydata = cliente.getJson();
+    var banco = $('#txtBanco').val();
+    var agencia = $('#txtAgencia').val();
+    var numero = $('#txtNumero').val();
+    var data = $('#txtData').val();
+    var tipo = $('#txtTipo option:selected').text();
+    var status = $('#chkStatus').is(":checked");
+    console.log(data);
+    var erros = [nomeValidator.isValid(nome), bancoValidator.isValid(banco)];
+    console.log(erros);
+    if (erros[0].length == 0 && erros[1] == 0) {
+      var conta = new Conta(nome, banco, agencia, numero, data, tipo, status);
+      var mydata = conta.getJson();
       e.preventDefault();
       $.ajax({
-        url: '/api/cadastrar',
+        url: '/financeiro/cadastrar',
         type: "POST",
         dataType: 'text',
         contentType: 'application/json',

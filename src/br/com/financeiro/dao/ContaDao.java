@@ -5,7 +5,7 @@ import javax.persistence.EntityManager;
 import br.com.financeiro.model.Conta;
 import br.com.financeiro.util.JpaUtil;
 
-public class Cadastrar {
+public class ContaDao {
 
 	public void cadastra(Conta conta){
 		
