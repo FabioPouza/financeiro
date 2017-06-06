@@ -33,7 +33,9 @@ $(document).ready(function () {
     var agencia = $('#txtAgencia').val();
     var numero = $('#txtNumero').val();
     var data = $('#txtData').val();
-    var tipo = $('#txtTipo option:selected').text();
+    var tipo = $('#txtTipo option:selected').text().toUpperCase();
+    tipo = tipo.replace("POUPANÇA", "POUPANCA");
+    console.log(tipo);
     var status = $('#chkStatus').is(":checked");
     console.log(data);
     var erros = [nomeValidator.isValid(nome), bancoValidator.isValid(banco)];
