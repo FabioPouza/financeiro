@@ -1,0 +1,109 @@
+<html>
+
+<head>
+  <title>Cadastrar</title>
+  <meta charset="UTF-8">
+  <link href="css/materialize.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/cadastro.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper color">
+      <a href="#" class="brand-logo">Financeiro</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">Cadastro<i class="small material-icons left">save</i></a></li>
+        <li><a href="logout.html">Sair<i class="small material-icons left">exit_to_app</i></a></li>
+      </ul>
+      <ul id="mobile-demo" class="side-nav">
+        <li><a href="#">Cadastro</a></li>
+        <li><a href="logout.html">Sair</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row alinhamento">
+    <form class="col s12" id="cadastro">
+      <div class="row">
+        <div class="input-field col s4 offset-s1">
+          <select class="icons" id="txtTipoLancamento">
+            <option value="" disabled>Escolha o tipo</option>
+            <option value="" data-icon="images/entrada.png" class="circle">Entrada</option>
+            <option value="" data-icon="images/saida.png" class="circle">Saida</option>
+          </select>
+          <label>Tipo de lançamento</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4 offset-s1">
+          <input id="txtValor" type="text" class="validate" name="valor">
+          <label for="txtValor" data-error="Valor Invalido">Valor</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4 offset-s1">
+          <input type="date" class="datepicker" id="txtData">
+          <label for="txtData">Data</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4 offset-s1">
+          <input id="txtDescricao" type="text" class="validate txt" name="descricao">
+          <label for="txtDescricao">Descrição</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4 offset-s1">
+          <input type="date" class="datepicker" id="txtData">
+          <label for="txtData">Data inicial</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4 offset-s1">
+          <select class="icons" id="txtCategoria">
+            <option value="">Escolha o tipo</option>
+            <option value="" data-icon="images/cadcategoria.png" class="circle">Cadastre uma nova</option>
+            <option value="" data-icon="images/corrente.png" class="circle">Educação</option>
+            <option value="" data-icon="images/poupanca.png" class="circle">Farmacia</option>
+          </select>
+          <label>Categoria</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4 offset-s1">
+          <select class="icons" id="txtCategoria">
+            <option value="" disabled>Escolha o tipo</option>
+            <option value="" data-icon="images/corrente.png" class="circle">Dinheiro</option>
+            <option value="" data-icon="images/poupanca.png" class="circle">Debito</option>
+          </select>
+          <label>Forma de pagamento</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4 offset-s1">
+          <textarea id="txtDescricao" type="text" class="materialize-textarea txt" name="descricao"></textarea>
+          <label for="txtDescricao">Observações</label>
+        </div>
+      </div>
+      <div id="btn">
+        <button class="btn waves-effect waves-light color" id="btnEnviar" type="button">Salvar
+          <i class="material-icons right">send</i>
+        </button>
+        <button class="btn waves-effect waves-light color" id="btnApagar" type="reset">Apagar
+          <i class="material-icons right">close</i>
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+<script src="js/jquery-3.2.0.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/jquery-mask.js"></script>
+<script src="js/apagar.js"></script>
+<script src="js/string-validator.js"></script>
+<script src="js/validacao.js"></script>
+<script src="js/cadastrarLancamento.js"></script>
+
+</html>

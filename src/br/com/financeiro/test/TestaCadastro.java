@@ -9,7 +9,7 @@ public class TestaCadastro {
 		
 		CategoriaLancamentoCaixa categoria = new CategoriaLancamentoCaixa();
 		
-		categoria.setDescricao("Papelaria");
+		categoria.setDescricao("Educação");
 		
 		CategoriaDao cad = new CategoriaDao();
 		
