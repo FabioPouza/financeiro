@@ -1,8 +1,22 @@
 package br.com.financeiro.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_categoria_lancamento_caixa")
 public class CategoriaLancamentoCaixa {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "Categoria_Lancamento_Caixa_Id")
 	private int id;
+	
+	@Column(name = "Categoria_Lancamento_Caixa_Descricao")
 	private String descricao;
 
 	public int getId() {

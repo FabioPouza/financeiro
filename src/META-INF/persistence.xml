@@ -11,7 +11,8 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<!-- Aqui são listadas todas as entidades -->
-		<class>br.com.financeiro.model.TipoConta</class>
+		<class>br.com.financeiro.model.Conta</class>
+		<class>br.com.financeiro.model.CategoriaLancamentoCaixa</class>
 		
 
 		<properties>

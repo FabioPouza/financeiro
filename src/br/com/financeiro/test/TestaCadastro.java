@@ -1,35 +1,19 @@
 package br.com.financeiro.test;
 
-import java.util.Calendar;
-
-import br.com.financeiro.dao.ContaDao;
-import br.com.financeiro.model.Conta;
-import br.com.financeiro.model.TipoConta;
+import br.com.financeiro.dao.CategoriaDao;
+import br.com.financeiro.model.CategoriaLancamentoCaixa;
 
 public class TestaCadastro {
 
 	public static void main(String[] args) {
 		
-		ContaDao cad = new ContaDao();
+		CategoriaLancamentoCaixa categoria = new CategoriaLancamentoCaixa();
 		
-		Conta conta = new Conta();
+		categoria.setDescricao("Papelaria");
 		
-		Calendar c = Calendar.getInstance();
+		CategoriaDao cad = new CategoriaDao();
 		
-		TipoConta tipo = TipoConta.CORRENTE;
-		
-		
-		
-		conta.setNome("Luis");
-		conta.setAgencia("09876");
-		conta.setBanco("Bradesco");
-		conta.setDataCadastro(c);
-		conta.setNumero("123");
-		conta.setStatus(true);
-		conta.setTipoConta(TipoConta.POUPANCA);
-		
-		cad.cadastra(conta);
-		
+		cad.cadastra(categoria);
 		
 	}
 	

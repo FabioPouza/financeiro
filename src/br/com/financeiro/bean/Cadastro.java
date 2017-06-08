@@ -54,8 +54,6 @@ public class Cadastro extends HttpServlet {
 			Conta conta = mapper.readValue(jb.toString(), Conta.class);
 			ContaDao cad = new ContaDao();
 			cad.cadastra(conta);
-			System.out.println(conta.getNome());
-			System.out.println(conta.getBanco());
 		} catch (JSONException e) {
 			// crash and burn
 			throw new IOException("Error parsing JSON request string");
