@@ -40,3 +40,7 @@ nav i.material-icons{
 .erros{
   background-color: #ef5350;
 }
+
+.modal{
+  border-radius: 10px;
+}

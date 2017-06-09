@@ -64,7 +64,7 @@
         <div class="input-field col s4 offset-s1">
           <select class="icons" id="txtCategoria">
             <option value="">Escolha o tipo</option>
-            <option value="#ModCategoria" data-icon="images/cadcategoria.png" class="circle">uma nova categoria</option>
+            <option value="cadastrar" data-icon="images/cadcategoria.png" class="circle">Cadastrar uma nova categoria</option>
             <option value="">Educação</option>
             <option value="">Farmacia</option>
           </select>
@@ -104,12 +104,12 @@
             <div class="row">
               <div class="input-field col s6 offset-s3">
                 <i class="material-icons prefix">create</i>
-                <input id="txtModCategoria" type="text" class="validate">
-                <label for="txtModCategoria" data-error="Email Invalido">Categoria</label>
+                <input id="txtModCategoria" type="text" class="validate" data-length="25">
+                <label for="txtModCategoria" data-error="Tamanho Invalido">Categoria</label>
               </div>
             </div>
             <div class="modal-footer">
-              <button class="modal-action waves-effect btn-flat" id="btnModEnviar">Enviar</button>
+              <button class="modal-action modal-close waves-effect btn-floating btn-large right color" id="btnModEnviar"><i class="material-icons right">send</i></button>
             </div>
           </form>
         </div>
@@ -124,6 +124,6 @@
 <script src="js/apagar.js"></script>
 <script src="js/string-validator.js"></script>
 <script src="js/validacao.js"></script>
-<script src="js/cadastrarLancamento.js"></script>
+<script src="js/iniciador.js"></script>
 
 </html>
