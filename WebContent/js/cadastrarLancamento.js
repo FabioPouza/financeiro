@@ -1,4 +1,11 @@
 $(document).ready(function () {
+    //  $("#txtCategoria").on("change", function () {
+    //  if ($(this).val() === 'cadastrar') {
+    $('.modal').modal();
+    console.log('teste');
+    // }
+    //});
+
     $('#txtDescricao').trigger('autoresize');
 
     $('.datepicker').pickadate({
@@ -14,4 +21,6 @@ $(document).ready(function () {
     $('#btnApagar').click(function () {
         apagar();
     });
+
+
 });

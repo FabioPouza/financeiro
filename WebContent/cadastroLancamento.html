@@ -64,9 +64,9 @@
         <div class="input-field col s4 offset-s1">
           <select class="icons" id="txtCategoria">
             <option value="">Escolha o tipo</option>
-            <option value="" data-icon="images/cadcategoria.png" class="circle">Cadastre uma nova</option>
-            <option value="" data-icon="images/corrente.png" class="circle">Educação</option>
-            <option value="" data-icon="images/poupanca.png" class="circle">Farmacia</option>
+            <option value="#ModCategoria" data-icon="images/cadcategoria.png" class="circle">uma nova categoria</option>
+            <option value="">Educação</option>
+            <option value="">Farmacia</option>
           </select>
           <label>Categoria</label>
         </div>
@@ -75,8 +75,8 @@
         <div class="input-field col s4 offset-s1">
           <select class="icons" id="txtCategoria">
             <option value="" disabled>Escolha o tipo</option>
-            <option value="" data-icon="images/corrente.png" class="circle">Dinheiro</option>
-            <option value="" data-icon="images/poupanca.png" class="circle">Debito</option>
+            <option value="" data-icon="images/poupanca.png" class="circle">Dinheiro</option>
+            <option value="" data-icon="images/cartao.png" class="circle">Debito</option>
           </select>
           <label>Forma de pagamento</label>
         </div>
@@ -95,6 +95,26 @@
           <i class="material-icons right">close</i>
         </button>
       </div>
+
+      <div id="ModCategoria" class="modal">
+        <div class="modal-content">
+          <h4>Cadastre uma nova categoria</h4>
+          <br>
+          <form id="modCadCategoria">
+            <div class="row">
+              <div class="input-field col s6 offset-s3">
+                <i class="material-icons prefix">create</i>
+                <input id="txtModCategoria" type="text" class="validate">
+                <label for="txtModCategoria" data-error="Email Invalido">Categoria</label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="modal-action waves-effect btn-flat" id="btnModEnviar">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
     </form>
   </div>
 </body>
