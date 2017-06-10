@@ -1,15 +1,7 @@
 $(document).ready(function () {
 
     //Inicialização do modal a partir do select
-    $('.modal').modal({
-
-        ready: function (modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
-            alert("Ready");
-            console.log(modal, trigger);
-        },
-
-        complete: function() { alert('Closed'); }
-    });
+    $('.modal').modal();
 
     $("#txtCategoria").on("change", function () {
         if ($(this).val() === 'cadastrar') {

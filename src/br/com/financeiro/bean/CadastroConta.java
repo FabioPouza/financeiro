@@ -2,6 +2,7 @@ package br.com.financeiro.bean;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.TimeZone;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,8 +22,8 @@ import br.com.financeiro.model.Conta;
 /**
  * Servlet implementation class Cadastrar
  */
-@WebServlet("/cadastrar")
-public class Cadastro extends HttpServlet {
+@WebServlet("/CadastroConta")
+public class CadastroConta extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
@@ -52,6 +53,9 @@ public class Cadastro extends HttpServlet {
 			JSONObject jsonObject = HTTP.toJSONObject(jb.toString());
 			ObjectMapper mapper = new ObjectMapper();
 			Conta conta = mapper.readValue(jb.toString(), Conta.class);
+			
+			TimeZone.setDefault(TimeZone.getTimeZone("Etc/UTC"));
+			
 			ContaDao cad = new ContaDao();
 			cad.cadastra(conta);
 		} catch (JSONException e) {

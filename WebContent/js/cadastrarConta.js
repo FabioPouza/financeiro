@@ -34,17 +34,14 @@ $(document).ready(function () {
     var data = $('#txtData').val();
     var tipo = $('#txtTipo option:selected').text().toUpperCase();
     tipo = tipo.replace("POUPANÇA", "POUPANCA");
-    console.log(tipo);
     var status = $('#chkStatus').is(":checked");
-    console.log(data);
     var erros = [nomeValidator.isValid(nome), bancoValidator.isValid(banco)];
-    console.log(erros);
     if (erros[0].length == 0 && erros[1] == 0) {
       var conta = new Conta(nome, banco, agencia, numero, data, tipo, status);
       var mydata = conta.getJson();
       e.preventDefault();
       $.ajax({
-        url: '/financeiro/cadastrar',
+        url: '/financeiro/CadastroConta',
         type: "POST",
         dataType: 'text',
         contentType: 'application/json',
