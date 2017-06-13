@@ -1,26 +1,24 @@
+$(document).ready(function () {
+    var itens = "";
+    var options = "";
+    var NOME_EVENTO_APPEND_SELECT = 'append';
 
-    $(document).ready(function () {
-        var val = $(this).serialize();
-        var ggg = $("#txtCategoria");
+    $('#txtCategoria').on(NOME_EVENTO_APPEND_SELECT, function () {
+        // re-initialize (update)
+        $(this).material_select();
+    });
 
-        //console.log($("#txtCategoria").append('<option value="option6">option6</option>'));
-        $.ajax({
+    $.getJSON('/financeiro/ConsultaCategoria', function (dados) {
+        //var options = '<option value="">teste</option>';
 
-            url: '/financeiro/ConsultaCategoria',
-            type: "POST",
-            dataType: 'html',
-            contentType: 'application/json',
-            data: val,
-            success: function (data) {
-                ggg.append('<option value="option6">option6</option>');
-                var json = $.parseJSON(data);
-                console.log($("#txtCategoria").append('<option value="option6">option6</option>'));
-                console.log(data);
-                console.log(json);
-                $('#txtCategoria').append('<option value="option6">option6</option>');
-                $('#txtValor').val(json.teste2);
-                callback();
-                
-            }
+        console.log(dados.teste);
+        $.each(dados, function (i, obj) {
+            console.log(obj);
+            options += '<li>' + obj + '</li>';
+            $('#txtCategoria')
+                .append($("<option></option>")
+                    .attr("value", i)
+                    .text(obj)).trigger(NOME_EVENTO_APPEND_SELECT);
         });
     });
+});
