@@ -1,3 +1,5 @@
+//Criação da classe para captura dos dados e serialização em Json
+
 $(document).ready(function () {
   $(".button-collapse").sideNav();
 
@@ -25,6 +27,8 @@ $(document).ready(function () {
       return JSON.stringify(conta);
     }
   };
+
+//Disparo da função para cadastrar a conta no banco
 
   $('#btnEnviar').click(function (e) {
     var nome = $('#txtNome').val();

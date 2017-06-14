@@ -1,6 +1,12 @@
 $(document).ready(function () {
-    var itens = "";
+    consulta();
+});
+
+function consulta() {
+
     var options = "";
+
+//Gatilho para re-renderização do componente select da pagina
     var NOME_EVENTO_APPEND_SELECT = 'append';
 
     $('#txtCategoria').on(NOME_EVENTO_APPEND_SELECT, function () {
@@ -8,11 +14,14 @@ $(document).ready(function () {
         $(this).material_select();
     });
 
+//Retorno do json pela rota consultada e incrementando no select
+
     $.getJSON('/financeiro/ConsultaCategoria', function (dados) {
-        //var options = '<option value="">teste</option>';
-        console.log(dados[0]);
+        $('#txtCategoria option[value!="cadastrar"]').remove();
+        $('#txtCategoria').prepend('<option value="" selected="selected">Escolha o tipo</option>')
+            .trigger(NOME_EVENTO_APPEND_SELECT);
+
         $.each(dados, function (i, obj) {
-            console.log(obj);
             options += '<li>' + obj + '</li>';
             $('#txtCategoria')
                 .append($("<option></option>")
@@ -20,4 +29,4 @@ $(document).ready(function () {
                     .text(obj)).trigger(NOME_EVENTO_APPEND_SELECT);
         });
     });
-});
+}

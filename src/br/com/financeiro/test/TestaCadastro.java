@@ -7,13 +7,17 @@ public class TestaCadastro {
 
 	public static void main(String[] args) {
 		
-		CategoriaLancamentoCaixa categoria = new CategoriaLancamentoCaixa();
+		//CategoriaLancamentoCaixa categoria = new CategoriaLancamentoCaixa();
 		
-		categoria.setDescricao("Educação");
+		//categoria.setDescricao("Educação");
 		
-		CategoriaDao cad = new CategoriaDao();
+		//CategoriaDao cad = new CategoriaDao();
 		
-		cad.cadastra(categoria);
+		//cad.cadastra(categoria);
+		
+		CategoriaDao dao = new CategoriaDao();
+		
+		dao.consulta();
 		
 	}
 	

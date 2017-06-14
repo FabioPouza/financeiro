@@ -1,3 +1,5 @@
+//Criação da classe para captura dos dados e serialização em Json
+
 $(document).ready(function () {
     function Categoria(descricao) {
         this.descricao = descricao;
@@ -7,6 +9,8 @@ $(document).ready(function () {
             return JSON.stringify(categoria);
         }
     };
+
+//Disparo da função de cadastrar a categoria no banco
 
     $('#btnModEnviar').click(function (e) {
         var descricao = $('#txtModCategoria').val();
@@ -25,6 +29,7 @@ $(document).ready(function () {
                     Materialize.toast('Categoria cadastrada com sucesso!', 3000, 'rounded');
                     modApagar();
                     $('.modal').modal('close');
+                    consulta();
                 }
             });
         }

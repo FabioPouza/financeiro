@@ -52,6 +52,8 @@ public class CadastroCategoria extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+		request.setCharacterEncoding("UTF8");
 
 		StringBuffer jb = new StringBuffer();
 		String line = null;

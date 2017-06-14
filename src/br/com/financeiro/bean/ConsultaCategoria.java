@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import br.com.financeiro.dao.CategoriaDao;
+
 /**
  * Servlet implementation class ConsultaCategoria
  */
@@ -36,18 +38,12 @@ public class ConsultaCategoria extends HttpServlet {
 		response.setContentType("application/json");
 		response.setCharacterEncoding("utf-8");
 		PrintWriter out = response.getWriter();
+
+		CategoriaDao dao = new CategoriaDao();
 		
-		ArrayList<Object> vet = new ArrayList<Object>();
-		
-		for(int i = 0; i < 10; i++){
-			
-			vet.add(i);
-		}
-		
-		JSONArray jsonA = new JSONArray(vet);
+		JSONArray jsonA = new JSONArray(dao.consulta());
 
 		out.print(jsonA.toString());
-
 	}
 
 	/**
