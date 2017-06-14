@@ -10,8 +10,7 @@ $(document).ready(function () {
 
     $.getJSON('/financeiro/ConsultaCategoria', function (dados) {
         //var options = '<option value="">teste</option>';
-
-        console.log(dados.teste);
+        console.log(dados[0]);
         $.each(dados, function (i, obj) {
             console.log(obj);
             options += '<li>' + obj + '</li>';

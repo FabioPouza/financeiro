@@ -2,6 +2,7 @@ package br.com.financeiro.bean;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -35,12 +37,16 @@ public class ConsultaCategoria extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		PrintWriter out = response.getWriter();
 		
-		JSONObject json = new JSONObject();
-
-		json.put("teste", 123456);
-		json.put("teste2", "ola");
+		ArrayList<Object> vet = new ArrayList<Object>();
 		
-		out.print(json.toString());
+		for(int i = 0; i < 10; i++){
+			
+			vet.add(i);
+		}
+		
+		JSONArray jsonA = new JSONArray(vet);
+
+		out.print(jsonA.toString());
 
 	}
 
