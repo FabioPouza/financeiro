@@ -20,7 +20,7 @@ $(document).ready(function () {
             var mydata = categoria.getJson();
             e.preventDefault();
             $.ajax({
-                url: '/financeiro/CadastroCategoria',
+                url: '/CadastroCategoria',
                 type: "POST",
                 dataType: 'text',
                 contentType: 'application/json',

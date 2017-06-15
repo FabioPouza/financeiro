@@ -45,7 +45,7 @@ $(document).ready(function () {
       var mydata = conta.getJson();
       e.preventDefault();
       $.ajax({
-        url: '/financeiro/CadastroConta',
+        url: '/CadastroConta',
         type: "POST",
         dataType: 'text',
         contentType: 'application/json',

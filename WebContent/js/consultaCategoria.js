@@ -16,7 +16,7 @@ function consulta() {
 
 //Retorno do json pela rota consultada e incrementando no select
 
-    $.getJSON('/financeiro/ConsultaCategoria', function (dados) {
+    $.getJSON('/ConsultaCategoria', function (dados) {
         $('#txtCategoria option[value!="cadastrar"]').remove();
         $('#txtCategoria').prepend('<option value="" selected="selected">Escolha o tipo</option>')
             .trigger(NOME_EVENTO_APPEND_SELECT);

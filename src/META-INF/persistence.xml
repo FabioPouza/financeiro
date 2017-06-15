@@ -18,13 +18,13 @@
 		<properties>
 
 			<!-- Propriedades JDBC -->
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/financeiro" />
-			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password" value="root" />
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-107-22-250-33.compute-1.amazonaws.com:5432/dbu5eco3l2o00s?sslmode=require&amp;user=ixvutolawcdsjj&amp;pascsword=60f4fdfb5cf6777a643f4a41a853e25225b1a525b7934099d6a3e44d5e8cfff8" />
+			<property name="javax.persistence.jdbc.user" value="ixvutolawcdsjj" />
+			<property name="javax.persistence.jdbc.password" value="60f4fdfb5cf6777a643f4a41a853e25225b1a525b7934099d6a3e44d5e8cfff8" />
 
 			<!-- Configurações específicas do Hibernate -->
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
 			<property name="hibernate.hbm2ddl.auto" value="none" />
 		
 			<property name="hibernate.show_sql" value="true" />

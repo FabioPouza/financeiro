@@ -65,6 +65,10 @@
   		<groupId>com.github.jsimone</groupId>
   		<artifactId>webapp-runner</artifactId>
   	</dependency>
+  	<dependency>
+  		<groupId>org.postgresql</groupId>
+  		<artifactId>postgresql</artifactId>
+  	</dependency>
   </dependencies>
   <dependencyManagement>
   	<dependencies>
@@ -107,6 +111,11 @@
   			<groupId>com.github.jsimone</groupId>
   			<artifactId>webapp-runner</artifactId>
   			<version>8.5.11.3</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>org.postgresql</groupId>
+  			<artifactId>postgresql</artifactId>
+  			<version>42.1.1</version>
   		</dependency>
   	</dependencies>
   </dependencyManagement>

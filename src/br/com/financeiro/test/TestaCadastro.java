@@ -17,7 +17,7 @@ public class TestaCadastro {
 		
 		CategoriaDao dao = new CategoriaDao();
 		
-		dao.consulta();
+		System.out.println(dao.consulta());
 		
 	}
 	
