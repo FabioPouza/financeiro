@@ -9,25 +9,33 @@
 </head>
 
 <body>
-  <nav>
-    <div class="nav-wrapper color">
-      <a href="#" class="brand-logo">Financeiro</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#">Cadastro<i class="small material-icons left">save</i></a></li>
-        <li><a href="logout.html">Sair<i class="small material-icons left">exit_to_app</i></a></li>
-      </ul>
-      <ul id="mobile-demo" class="side-nav">
-        <li><a href="#">Cadastro</a></li>
-        <li><a href="logout.html">Sair</a></li>
-      </ul>
-    </div>
-  </nav>
+  <ul id="menu" class="dropdown-content">
+    <li><a href="index.html">Conta</a></li>
+    <li><a href="cadastroLancamento.html">Lançamento</a></li>
+    <li><a href="#!">Categoria</a></li>
+  </ul>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper color">
+        <a href="index.html" class="brand-logo">Financeiro</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a class="dropdown-button" href="#" data-activates="menu">Cadastro<i class="material-icons left">arrow_drop_down</i></a></li>
+          <li><a href="logout.html">Sair<i class="small material-icons left">exit_to_app</i></a></li>
+        </ul>
+        <ul id="mobile-demo" class="side-nav">
+          <li><a href="#">Cadastro</a></li>
+          <li><a href="logout.html">Sair</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <h2 class="thin titulo">Cadastro de Lançamento</h2>
 
-  <div class="row alinhamento">
+  <div class="row alinhamento borda">
     <form class="col s12" id="cadastro">
       <div class="row">
-        <div class="input-field col s4 offset-s1">
+        <div class="input-field col s10 offset-s1">
           <select class="icons" id="txtTipoLancamento">
             <option value="" disabled>Escolha o tipo</option>
             <option value="" data-icon="images/entrada.png" class="circle">Entrada</option>
@@ -37,25 +45,25 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s4 offset-s1">
+        <div class="input-field col s10 offset-s1">
           <input id="txtValor" type="text" class="validate" name="valor">
           <label for="txtValor" data-error="Valor Invalido">Valor</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s4 offset-s1">
+        <div class="input-field col s10 offset-s1">
           <input type="date" class="datepicker" id="txtData">
           <label for="txtData">Data</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s4 offset-s1">
+        <div class="input-field col s10 offset-s1">
           <input id="txtDescricao" type="text" class="validate txt" name="descricao">
           <label for="txtDescricao">Descrição</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s4 offset-s1 teste">
+        <div class="input-field col s10 offset-s1 teste">
           <select class="icons" id="txtCategoria">
             <option value="tipo">Escolha o tipo</option>
             <option value="cadastrar" data-icon="images/cadcategoria.png" class="circle">Cadastrar uma nova categoria</option>
@@ -64,7 +72,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s4 offset-s1">
+        <div class="input-field col s10 offset-s1">
           <select class="icons" id="txtPagamento">
             <option value="" disabled>Escolha o tipo</option>
             <option value="" data-icon="images/poupanca.png" class="circle">Dinheiro</option>
@@ -74,7 +82,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s4 offset-s1">
+        <div class="input-field col s10 offset-s1">
           <textarea id="txtDescricao" type="text" class="materialize-textarea txt" name="descricao"></textarea>
           <label for="txtDescricao">Observações</label>
         </div>

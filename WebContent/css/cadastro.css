@@ -26,11 +26,11 @@ nav ul a{
 }
 
 .alinhamento{
-  padding-top:80px;
+  padding-top:30px;
 }
 
 #btn{
-  padding-left: 150px;
+  padding-left: 80px;
 }
 
 nav i.material-icons{
@@ -43,4 +43,19 @@ nav i.material-icons{
 
 .modal{
   border-radius: 10px;
+}
+
+.titulo{
+  padding-left: 20px;
+}
+
+.borda{
+
+  padding-top: 30px;
+  width: 500px;
+  margin-left: 10px;
+  padding-left: 0;
+  border: solid;
+  border-radius: 12px;
+  border-color: #757575;
 }

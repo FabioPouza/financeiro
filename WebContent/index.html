@@ -9,86 +9,95 @@
 </head>
 
 <body>
-  <nav>
-    <div class="nav-wrapper color">
-      <a href="#" class="brand-logo">Financeiro</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#">Cadastro<i class="small material-icons left">save</i></a></li>
-        <li><a href="logout.html">Sair<i class="small material-icons left">exit_to_app</i></a></li>
-      </ul>
-      <ul id="mobile-demo" class="side-nav">
-        <li><a href="#">Cadastro</a></li>
-        <li><a href="logout.html">Sair</a></li>
-      </ul>
-    </div>
-  </nav>
+  <ul id="menu" class="dropdown-content">
+    <li><a href="index.html">Conta</a></li>
+    <li><a href="cadastroLancamento.html">Lançamento</a></li>
+    <li><a href="#!">Categoria</a></li>
+  </ul>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper color">
+        <a href="index.html" class="brand-logo">Financeiro</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a class="dropdown-button" href="#" data-activates="menu">Cadastro<i class="small material-icons left">arrow_drop_down</i></a></li>
+          <li><a href="logout.html">Sair<i class="small material-icons left">exit_to_app</i></a></li>
+        </ul>
+        <ul id="mobile-demo" class="side-nav">
+          <li><a href="#">Cadastro</a></li>
+          <li><a href="logout.html">Sair</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <h2 class="thin titulo">Cadastro de Conta</h2>
 
-  <div class="row alinhamento">
-    <form class="col s12" id="cadastro">
-      <div class="row">
-        <div class="input-field col s4 offset-s1">
-          <input placeholder="Digite seu nome..." id="txtNome" type="text" class="validate" name="nome"/>
-          <label for="txtNome" data-error="Nome Invalido">Nome</label>
+    <div class="row alinhamento borda">
+      <form class="col s12" id="cadastro">
+        <div class="row">
+          <div class="input-field col s10 offset-s1">
+            <input placeholder="Digite seu nome..." id="txtNome" type="text" class="validate" name="nome" />
+            <label for="txtNome" data-error="Nome Invalido">Nome</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s4 offset-s1">
-          <input id="txtBanco" type="text" class="validate" name="banco">
-          <label for="txtBanco" data-error="Banco Invalido">Banco</label>
+        <div class="row">
+          <div class="input-field col s10 offset-s1">
+            <input id="txtBanco" type="text" class="validate" name="banco">
+            <label for="txtBanco" data-error="Banco Invalido">Banco</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s4 offset-s1">
-          <input id="txtAgencia" type="text" class="validate txt" name="agencia">
-          <label for="txtAgencia">Agencia</label>
+        <div class="row">
+          <div class="input-field col s10 offset-s1">
+            <input id="txtAgencia" type="text" class="validate txt" name="agencia">
+            <label for="txtAgencia">Agencia</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s4 offset-s1">
-          <input id="txtNumero" type="text" class="validate txt" name="numero">
-          <label for="txtNumero">Numero</label>
+        <div class="row">
+          <div class="input-field col s10 offset-s1">
+            <input id="txtNumero" type="text" class="validate txt" name="numero">
+            <label for="txtNumero">Numero</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s4 offset-s1">
-          <input type="date" class="datepicker" id="txtData">
-          <label for="txtData">Data inicial</label>
+        <div class="row">
+          <div class="input-field col s10 offset-s1">
+            <input type="date" class="datepicker" id="txtData">
+            <label for="txtData">Data inicial</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s4 offset-s1">
-          <select class="icons" id="txtTipo">
+        <div class="row">
+          <div class="input-field col s10 offset-s1">
+            <select class="icons" id="txtTipo">
             <option value="" disabled>Escolha o tipo</option>
             <option value="" data-icon="images/corrente.png" class="circle">Corrente</option>
             <option value="" data-icon="images/poupanca.png" class="circle">Poupança</option>
           </select>
-          <label>Tipo de conta</label>
+            <label>Tipo de conta</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col s4 offset-s1">
-          <p>
-            <input type="checkbox" id="chkStatus" />
-            <label for="chkStatus">Status da conta</label>
-          </p>
+        <div class="row">
+          <div class="col s10 offset-s1">
+            <p>
+              <input type="checkbox" id="chkStatus" />
+              <label for="chkStatus">Status da conta</label>
+            </p>
+          </div>
         </div>
-      </div>
-      <div id="btn">
-        <button class="btn waves-effect waves-light color" id="btnEnviar" type="button">Salvar
+        <div id="btn">
+          <button class="btn waves-effect waves-light color" id="btnEnviar" type="button">Salvar
           <i class="material-icons right">send</i>
         </button>
-        <button class="btn waves-effect waves-light color" id="btnApagar" type="reset">Apagar
+          <button class="btn waves-effect waves-light color" id="btnApagar" type="reset">Apagar
           <i class="material-icons right">close</i>
         </button>
-      </div>
-    </form>
-  </div>
+        </div>
+      </form>
+    </div>
 </body>
 <script src="js/jquery-3.2.0.min.js"></script>
 <script src="js/materialize.js"></script>
 <script src="js/jquery-mask.js"></script>
 <script src="js/apagar.js"></script>
+<script src="js/iniciador.js"></script>
 <script src="js/string-validator.js"></script>
 <script src="js/validacao.js"></script>
 <script src="js/cadastrarConta.js"></script>

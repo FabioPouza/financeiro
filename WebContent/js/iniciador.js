@@ -28,5 +28,5 @@ $(document).ready(function () {
         apagar();
     });
 
-
+    $(".dropdown-button").dropdown();
 });
