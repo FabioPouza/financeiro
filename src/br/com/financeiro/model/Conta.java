@@ -1,49 +1,55 @@
 package br.com.financeiro.model;
 
 import java.util.Calendar;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 @Entity
 @Table(name = "Tb_Conta")
 public class Conta {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "Conta_Id")
 	private int id;
-	
+
+	@OneToMany(mappedBy = "conta", targetEntity = LancamentoCaixa.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<LancamentoCaixa> lancamento;
+
 	@Column(name = "Tipo_Conta_Id")
 	@Enumerated(EnumType.ORDINAL)
 	private TipoConta tipoConta;
-	
+
 	@Column(name = "Conta_Numero")
 	private String numero;
-	
+
 	@Column(name = "Conta_Status")
 	private boolean status;
-	
+
 	@Column(name = "Conta_Nome")
 	private String nome;
-	
+
 	@Column(name = "Conta_Banco")
 	private String banco;
-	
+
 	@Column(name = "Conta_Agencia")
 	private String agencia;
-	
+
 	@Column(name = "Conta_Data_Inicial")
 	@Temporal(TemporalType.DATE)
 	private Calendar dataCadastro;
@@ -124,6 +130,14 @@ public class Conta {
 	@JsonProperty("data")
 	public void setDataCadastro(Calendar dataCadastro) {
 		this.dataCadastro = dataCadastro;
+	}
+	
+	public List<LancamentoCaixa> getLancamento() {
+		return lancamento;
+	}
+
+	public void setLancamento(List<LancamentoCaixa> lancamento) {
+		this.lancamento = lancamento;
 	}
 
 }
