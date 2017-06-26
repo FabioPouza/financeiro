@@ -2,7 +2,7 @@ package br.com.financeiro.bean;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +14,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import br.com.financeiro.dao.CategoriaDao;
+import br.com.financeiro.model.CategoriaLancamentoCaixa;
 
 /**
  * Servlet implementation class ConsultaCategoria
@@ -41,9 +42,18 @@ public class ConsultaCategoria extends HttpServlet {
 
 		CategoriaDao dao = new CategoriaDao();
 		
-		JSONArray jsonA = new JSONArray(dao.consulta());
+		List<CategoriaLancamentoCaixa> cat = dao.consulta();
+		JSONObject categoria = new JSONObject();
+		JSONArray categorias = new JSONArray();
 
-		out.print(jsonA.toString());
+		for(CategoriaLancamentoCaixa c : cat){
+			JSONObject json = new JSONObject();
+			json.put("ID", c.getId());
+			json.put("DESCRICAO", c.getDescricao());
+			categorias.put(json);
+		}
+		out.print(categorias.toString());
+
 	}
 
 	/**

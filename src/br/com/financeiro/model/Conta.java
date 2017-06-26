@@ -54,10 +54,12 @@ public class Conta {
 	@Temporal(TemporalType.DATE)
 	private Calendar dataCadastro;
 
+	@JsonProperty("id")
 	public int getId() {
 		return id;
 	}
 
+	@JsonProperty("id")
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -113,7 +115,7 @@ public class Conta {
 	}
 
 	@JsonProperty("status")
-	public boolean isStatus() {
+	public boolean getStatus() {
 		return status;
 	}
 

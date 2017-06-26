@@ -20,14 +20,14 @@ public class CategoriaDao {
 
 	}
 
-	public ArrayList<Object> consulta() {
+	public ArrayList<CategoriaLancamentoCaixa> consulta() {
 
 		EntityManager em = new JpaUtil().getEntityManager();
 
-		Query query = em.createQuery("select c.descricao from CategoriaLancamentoCaixa c");
+		Query query = em.createQuery("select c from CategoriaLancamentoCaixa c");
 
-		ArrayList<Object> res = (ArrayList<Object>) query.getResultList();
-				
+		ArrayList<CategoriaLancamentoCaixa> res = (ArrayList<CategoriaLancamentoCaixa>) query.getResultList();
+
 		return res;
 	}
 

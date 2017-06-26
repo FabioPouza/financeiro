@@ -29,9 +29,6 @@ public class CategoriaLancamentoCaixa {
 	@OneToMany(mappedBy = "categoriaLancamentoCaixa", targetEntity = LancamentoCaixa.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<LancamentoCaixa> lancamentoCaixa;
 
-	public int getId() {
-		return id;
-	}
 
 	public List<LancamentoCaixa> getLancamentoCaixa() {
 		return lancamentoCaixa;
@@ -40,7 +37,13 @@ public class CategoriaLancamentoCaixa {
 	public void setLancamentoCaixa(List<LancamentoCaixa> lancamentoCaixa) {
 		this.lancamentoCaixa = lancamentoCaixa;
 	}
+	
+	@JsonProperty("id")
+	public int getId() {
+		return id;
+	}
 
+	@JsonProperty("id")
 	public void setId(int id) {
 		this.id = id;
 	}

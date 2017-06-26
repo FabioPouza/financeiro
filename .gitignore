@@ -2,3 +2,4 @@
 .vscode/settings.json
 /target/
 /src/META-INF/persistence.xml
+src/META-INF/persistence.xml
