@@ -29,7 +29,7 @@ $(document).ready(function () {
                     Materialize.toast('Categoria cadastrada com sucesso!', 3000, 'rounded');
                     modApagar();
                     $('.modal').modal('close');
-                    consulta();
+                    consultaCategoria();
                 }
             });
         }

@@ -12,15 +12,26 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+import br.com.financeiro.util.EntityIdResolver;
 
 @Entity
 @Table(name = "tb_categoria_lancamento_caixa")
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id",
+        resolver = EntityIdResolver.class,
+        scope=CategoriaLancamentoCaixa.class)
 public class CategoriaLancamentoCaixa {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "Categoria_Lancamento_Caixa_Id")
+	@JsonValue
 	private int id;
 
 	@Column(name = "Categoria_Lancamento_Caixa_Descricao")

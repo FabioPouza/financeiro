@@ -29,4 +29,5 @@ function consultaCategoria() {
                     .text(obj['DESCRICAO'])).trigger(NOME_EVENTO_APPEND_SELECT);
         });
     });
+
 }

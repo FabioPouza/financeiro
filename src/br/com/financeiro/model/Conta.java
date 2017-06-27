@@ -17,15 +17,26 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+import br.com.financeiro.util.EntityIdResolver;
 
 @Entity
 @Table(name = "Tb_Conta")
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id",
+        resolver = EntityIdResolver.class,
+        scope=Conta.class)
 public class Conta {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "Conta_Id")
+	@JsonValue
 	private int id;
 
 	@OneToMany(mappedBy = "conta", targetEntity = LancamentoCaixa.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
